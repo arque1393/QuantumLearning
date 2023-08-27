@@ -1,8 +1,8 @@
 #%% 
 import pygit2
+from getpass import getpass
 username = input("Enter Username : ")
-token = input("Enter Token : ")
-
+token = getpass("Enter Token : ")
 r = pygit2.init_repository('/home/jovyan/QuantumLearning/.git')
 index = r.index
 index.add_all()
