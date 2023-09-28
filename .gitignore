@@ -1,5 +1,6 @@
 .qenv/
 .qiskit/
+.q/
 .cenv/
 collected_reference/
 .ipynb_checkpoints/
