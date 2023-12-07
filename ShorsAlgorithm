@@ -1,0 +1,51 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+# Title: Shor's Algorithm
+
+Created on Wed Dec  6 17:12:39 2023
+
+@author: aritrarc1
+"""
+# %% Basic Tools
+import numpy as np 
+from matplotlib import pyplot as plt
+from IPython.display import display as disp
+
+# %% Quantum Tools
+import qiskit as q
+from qiskit import quantum_info as qi
+from qiskit.visualization import (plot_bloch_multivector,
+                                  plot_bloch_vector, plot_histogram)
+
+# %% Markdown
+## Quantum Fourior Transform 
+
+
+### My Own QFT Circuit
+n_qubit = 4          # number of Qubit
+fourior_circuit = q.QuantumCircuit(
+    n_qubit, name = "QFT")
+
+for qubit in range(n_qubit):
+    fourior_circuit.h(qubit)
+    for o_qubit in range(qubit+1,n_qubit):
+        cu1 = q.circuit.library.CU1Gate(np.pi/(2**(o_qubit-qubit)))
+        fourior_circuit.append(cu1,[o_qubit, qubit])
+        
+disp(fourior_circuit.draw('mpl', fold=False))
+
+# %%  Qiskit QFT Circuit
+
+from qiskit.circuit.library import QFT
+fc = QFT(4).decompose()
+disp(fc.draw('mpl'))
+
+
+
+
+
+
+
+
+# %%  
