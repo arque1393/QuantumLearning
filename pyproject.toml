@@ -1,0 +1,17 @@
+[project]
+name = "quantumlearning"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "qiskit>=2.3.0",
+    "qiskit-aer>=0.17.2",
+    "qiskit-ibm-runtime>=0.45.1",
+    "qiskit-machine-learning>=0.9.0",
+    "qiskit-terra>=0.46.3",
+    "qiskit-textbook",
+]
+
+[tool.uv.sources]
+qiskit-textbook = { git = "https://github.com/qiskit-community/qiskit-textbook.git", subdirectory = "qiskit-textbook-src" }

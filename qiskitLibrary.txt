@@ -1,6 +1,6 @@
 qiskit
 qiskit-aer
-qiskit-ibmq-provider
+qiskit_ibm_runtime
 qiskit-machine-learning
 qiskit-terra
 git+https://github.com/qiskit-community/qiskit-textbook.git#subdirectory=qiskit-textbook-src
